@@ -10,11 +10,15 @@ OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 CC = g++
 COMPILER_FLAGS = -Wall
 LINKER_FLAGS = -lSDL2main -lSDL2
-TARGET = ../build/bin/labyrinth
+OUTPUTDIR = ../build/bin
+TARGET = $(OUTPUTDIR)/labyrinth
 
 $(OBJ_DIR)/%.o: %.cpp
 	mkdir -p $(@D)
 	$(CC) $(COMPILER_FLAGS) -c $< -o $@
 
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $(TARGET) $(LINKER_FLAGS)
+$(TARGET): $(OBJS) $(OUTPUTDIR)
+	$(CC) $(OBJS) -o $(TARGET) $(LINKER_FLAGS)\
+
+$(OUTPUTDIR):
+	@mkdir -p $(OUTPUTDIR)
