@@ -23,6 +23,7 @@ public:
 	unordered_map<int, Entity*> getEntities();
 	void moveEntity(int index, int xOffset, int yOffset);
 	void pickup(int index, int xOffset, int yOffset);
+	void drop(int index, int inventoryIndex, int xOffset, int yOffset);
 private:
 	static const int WIDTH = 64;
 	static const int HEIGHT = 64;

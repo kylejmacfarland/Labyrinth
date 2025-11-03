@@ -76,6 +76,10 @@ void Floor::pickup(int index, int xOffset, int yOffset) {
 	}
 }
 
+void Floor::drop(int index, int inventoryIndex, int xOffset, int yOffset) {
+	return;
+}
+
 void Floor::addPlayerAt(Entity* player, int x, int y) {
 	playerIndex = getIndex(x, y);
 	addEntityAt(player, x, y);
